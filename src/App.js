@@ -11,20 +11,15 @@ import { Route, Routes } from 'react-router-dom'
 // https://64a28e59b45881cc0ae55888.mockapi.io/items
 
 function App() {
-	
-
 	return (
 		<div className='wrapper'>
 			<Header />
-			<div className='content'>
-				<div className='container'>
+			<div className='container'>
 				<Routes>
-					<Route path='/' element={<Home/>}/>
-					<Route path='/cart' element={<Cart/>}/>
-					<Route path='*' element={<NotFound/>}/>
+					<Route path='/' element={<Home />} />
+					<Route path='/cart' element={<Cart />} />
+					<Route path='*' element={<NotFound />} />
 				</Routes>
-					
-				</div>
 			</div>
 		</div>
 	)
