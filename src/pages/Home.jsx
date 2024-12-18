@@ -16,7 +16,9 @@ const Home = () => {
 	React.useEffect(() => {
 		setIsLoading(true)
 		fetch(
-			'https://64a28e59b45881cc0ae55888.mockapi.io/items?category=' + categoryId
+			`https://64a28e59b45881cc0ae55888.mockapi.io/items?${
+				categoryId > 0 ? `category=${categoryId}` : ''
+			}&sortBy=${sortType.sortProperty}&order=desc`
 		)
 			.then(res => res.json())
 			.then(item => {
