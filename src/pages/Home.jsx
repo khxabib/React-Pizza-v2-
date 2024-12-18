@@ -8,7 +8,10 @@ const Home = () => {
 	const [items, setItems] = React.useState([])
 	const [isLoading, setIsLoading] = React.useState(true)
 	const [categoryId, setCategoryId] = React.useState(0)
-	const [sortType, setSortType] = React.useState(0)
+	const [sortType, setSortType] = React.useState({
+		name: 'популярности',
+		sortProperty: 'rating',
+	})
 
 	React.useEffect(() => {
 		setIsLoading(true)
@@ -21,7 +24,7 @@ const Home = () => {
 				setIsLoading(false)
 			})
 		window.scrollTo(0, 0)
-	}, [categoryId])
+	}, [categoryId, sortType])
 
 	return (
 		<div className='content'>
