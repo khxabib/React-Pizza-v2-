@@ -11,12 +11,13 @@ import { Route, Routes } from 'react-router-dom'
 // https://64a28e59b45881cc0ae55888.mockapi.io/items
 
 function App() {
+	const [searchValue, setSearchValue] = React.useState('')
 	return (
 		<div className='wrapper'>
-			<Header />
+			<Header searchValue={searchValue} setSearchValue={setSearchValue} />
 			<div className='container'>
 				<Routes>
-					<Route path='/' element={<Home />} />
+					<Route path='/' element={<Home searchValue={searchValue} />} />
 					<Route path='/cart' element={<Cart />} />
 					<Route path='*' element={<NotFound />} />
 				</Routes>
